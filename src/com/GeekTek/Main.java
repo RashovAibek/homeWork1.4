@@ -6,7 +6,7 @@ public class Main {
 
     public static int[] heroesHealth = { 270, 280, 250 , 220};
     public static int[] heroesDealth = { 20, 15, 25, 0};
-    public static String[] heroesAttackType = {"Physycal" , "Magical" , "Kinetic", "Medic7"};
+    public static String[] heroesAttackType = {"Physycal" , "Magical" , "Kinetic", "Medic"};
 
     public static int bossHealth = 700;
     public static int bossDamage = 50;
@@ -109,11 +109,11 @@ public class Main {
     }
     public static void medicHealth(){
         for (int i = 0; i < heroesHealth.length; i++) {
-            if (heroesHealth [3] > 0 && heroesHealth [i] < 100 && heroesHealth [i] > 0){
+            if (heroesHealth [3] > 0 && heroesHealth [i] < 100 && heroesHealth [i] > 0 && heroesAttackType[i] != "Medic" ){
                 Random r = new Random();
                 int random = r.nextInt(60);
                 heroesHealth [i] = heroesHealth [i] + random;
-                System.out.println("medic healed " + heroesAttackType[i] + " by " + random + " hp");
+                System.out.println("medic healed " + heroesAttackType [i] + " by " + random + " hp");
                 break;
             }
         }
